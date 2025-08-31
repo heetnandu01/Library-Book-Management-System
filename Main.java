@@ -12,12 +12,16 @@ public class Main {
             System.out.println("2. View All Books");
             System.out.println("3. Search Book");
             System.out.println("4. Remove Book");
-            System.out.println("5. Exit");
+            System.out.println("5. Update Book Details");
+            System.out.println("6. Search Books by Author");
+            System.out.println("7. Sort Books by Title");
+            System.out.println("8. Sort Books by ID");
+            System.out.println("9. Exit");
 
             System.out.print("Enter the choice No: ");
             int choice = sc.nextInt();
 
-            if (choice == 5) {
+            if (choice == 9) {
                 System.out.println("Exiting....");
                 break;
             }
@@ -51,6 +55,32 @@ public class Main {
                     break;
 
                 case 5:
+                    System.out.print("Enter Book ID to update: ");
+                    int updateId = sc.nextInt();
+                    sc.nextLine();
+                    System.out.print("Enter new title (leave blank to keep current): ");
+                    String newTitle = sc.nextLine();
+                    System.out.print("Enter new author (leave blank to keep current): ");
+                    String newAuthor = sc.nextLine();
+                    db.updateBook(updateId, newTitle, newAuthor);
+                    break;
+
+                case 6:
+                    sc.nextLine();
+                    System.out.print("Enter author name: ");
+                    String authorName = sc.nextLine();
+                    db.searchByAuthor(authorName);
+                    break;
+
+                case 7:
+                    db.sortByTitle();
+                    break;
+
+                case 8:
+                    db.sortById();
+                    break;
+
+                case 9:
                     System.out.println("Exiting Library System...");
                     return;
 

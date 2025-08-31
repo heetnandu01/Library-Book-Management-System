@@ -14,34 +14,86 @@ public class LibraryDatabase {
         System.out.println("Book added.");
     }
 
-    void viewBooks(){
-        if(db.isEmpty()){
+    void viewBooks() {
+        if (db.isEmpty()) {
             System.out.println("No books");
             return;
-        }else{
-            for(Book b : db.values()){
+        } else {
+            for (Book b : db.values()) {
                 System.out.println(b);
             }
         }
     }
 
-    void searchBook(int id){
-        if(db.containsKey(id)){
+    void searchBook(int id) {
+        if (db.containsKey(id)) {
             Book b = db.get(id);
             System.out.println(b);
-        }
-        else{
+        } else {
             System.out.println("Books not found");
         }
     }
 
-    void removeBook(int id){
-        if(db.containsKey(id)){
+    void removeBook(int id) {
+        if (db.containsKey(id)) {
             Book b = db.remove(id);
             System.out.println(b);
-        }
-        else{
+        } else {
             System.out.println("Not Found");
+        }
+    }
+
+    void updateBook(int id, String newTitle, String newAuthor) {
+        if (db.containsKey(id)) {
+            Book b = db.get(id);
+            if (!newTitle.isEmpty())
+                b.setTitle(newTitle);
+            if (!newAuthor.isEmpty())
+                b.setAuthor(newAuthor);
+            System.out.println("Book updated: " + b);
+        } else {
+            System.out.println("Book not found.");
+        }
+    }
+
+    void searchByAuthor(String author) {
+        boolean found = false;
+        for (Book b : db.values()) {
+            if (b.getAuthor().equalsIgnoreCase(author)) {
+                System.out.println(b);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No books found by this author.");
+        }
+    }
+
+    void sortByTitle() {
+        if (db.isEmpty()) {
+            System.out.println("No books to display.");
+            return;
+        }
+        List<Book> bookList = new ArrayList<>(db.values());
+        bookList.sort((b1, b2) -> b1.getTitle().compareToIgnoreCase(b2.getTitle()));
+
+        System.out.println("Books sorted by Title:");
+        for (Book b : bookList) {
+            System.out.println(b);
+        }
+    }
+
+    void sortById() {
+        if (db.isEmpty()) {
+            System.out.println("No books to display.");
+            return;
+        }
+        List<Book> bookList = new ArrayList<>(db.values());
+        bookList.sort(Comparator.comparingInt(Book::getId));
+
+        System.out.println("Books sorted by ID:");
+        for (Book b : bookList) {
+            System.out.println(b);
         }
     }
 }
