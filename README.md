@@ -1,4 +1,4 @@
-**📚 Library Book Management System**
+**📚 LibraryManager**
 
 A console-based Java application to manage library books with CRUD operations and advanced search functionality.
 
