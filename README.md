@@ -1,49 +1,60 @@
-# 📚 Library Book Management System
+**📚 Library Book Management System**
 
-A console-based Java application to manage library books using basic CRUD operations.  
-This project demonstrates core Java concepts like OOP, collections, and menu-driven user interaction.
+A console-based Java application to manage library books with CRUD operations and advanced search functionality.
+
+**✨ Features**
+
+* **Add Books** - Register new books with unique ID, title, and author information
+* **View All Books** - Display complete library inventory in formatted table
+* **Search by ID** - Find specific books using their unique identifier
+* **Search by Author** - Find all books written by a specific author
+* **Sort by Title** - Display books in alphabetical order by title
+* **Sort by ID** - Display books sorted numerically by their ID
+* **Remove Books** - Delete books from the library database by ID
+* **Interactive Menu** - User-friendly console interface with numbered options
+
+**🛠️ Technologies Used**
+
+* **Java**
+* **LinkedHashMap**
+* **Object-Oriented Programming**
+* **Scanner Class**
+
+**📂 Project Structure**
+
+```
+Library-Book-Management-System/
+├── Book.java              
+├── LibraryDatabase.java   
+├── Main.java              
+```
+
+* `Book.java` - Book entity class with properties and methods
+* `LibraryDatabase.java` - Handles CRUD operations and book management logic
+* `Main.java` - Menu-driven interface and entry point
+
+**🚀 Installation & Setup**
+
+1. **Clone the repository**
+
+```
+git clone https://github.com/heetnandu01/Library-Book-Management-System.git
+cd Library-Book-Management-System
+```
+
+2. **Compile the Java files**
+
+```
+javac *.java
+```
+
+3. **Run the application**
+
+```
+java Main
+```
+
 
 ---
 
-## 🛠️ Technologies Used
-
-<p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="40"/>
-  <img src="https://img.icons8.com/ios/50/command-line.png" alt="Terminal" width="36"/>
-</p>
-
-- Java
-- LinkedHashMap for data storage
-- Object-Oriented Programming (Encapsulation, Classes, Objects)
-- Scanner for CLI input
-
----
-
-## ✨ Features
-
-- ➕ Add a new book (ID, title, author)  
-- 📃 View all books  
-- 🔍 Search book by ID  
-- ❌ Remove book by ID  
-- 🧭 Interactive CLI-based menu  
-
----
-
-## 📂 Project Structure
-
-
----
-
-## ▶️ How to Run
-
-1. Place all `.java` files in the same folder:
-   - `Book.java`
-   - `LibraryDatabase.java`
-   - `Main.java`
-
-2. Open terminal and compile:
-   ```bash
-   javac *.java
-3.Run the application:
-   ```bash
-   java Main.java
+⭐ **Star this repo if you found it helpful!**
